@@ -1,7 +1,7 @@
 @font-face {
-    font-family: "Roboto", "PlayfairDisplay-VariableFont_wght";
-    src: url(/fonts/Roboto-Regular.ttf) format("truetype");
-    src: url(/fonts/PlayfairDisplay-VariableFont_wght.ttf) format("truetype");
+    font-family: "HindGuntur", "PTSans";
+    src: url(/font/HindGuntur-bold.ttf) format("truetype");
+    src: url(/font/PTSans-Regular.ttf) format("truetype");
 }
 * {
     margin: 0;
@@ -19,7 +19,7 @@ html {
     --card: #f2f2f2;
     --blue: #263C6D;
     --green: #64C133;
-    --font-headline: "PT Sans", Sans;
+    --font-headline: "PT Sans";
     --font-para: "Hind Guntur", "roboto";
 }
 
@@ -47,6 +47,14 @@ main {
 footer {
     grid-area: footer;
     background-color: var(--footer);
+    color: #fff;
+}
+
+p {
+    font-family: var(--font-para);
+}
+h1 {
+    font-family: var(--font-headline);
 }
 
 /* header - logo */
@@ -67,7 +75,7 @@ a {
 .nav-bar {
     min-height: 70px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     padding: 0 24px;
     float: right;
@@ -76,14 +84,23 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 60px;
+    gap: 10px;
 }
 /* hover link */
 .nav-link {
-    transition: 0.9s ease;
+    transition: 0.3s ease;
+    padding: 10px 10px;
+    border: #EE8E13 solid 1px;
+    /* box-shadow: #000 1px 1px; */
 }
 .nav-link:hover {
-    color: gray;
+    color: var(--blue);
+    box-shadow: var(--header) 1px 1px 1px 1px;
+    box-shadow: #000 1px 1px;
+    
+}
+#active {
+    box-shadow: #000 1px 1px;
 }
 .hamburger-menu {
     display: none;
@@ -101,9 +118,22 @@ a {
 }
 
 
-
-
-
+/* Footer */
+footer {
+    display: grid;
+}
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+i {
+    color: #EE8E13;
+}
+i:hover {
+    color: #263C6D;
+    transform: rotate(180deg);
+    transition: all 0,5s;
+}
 
 
 
@@ -113,6 +143,7 @@ a {
 
 /* media Q */
 @media only screen and (max-width: 768px) {
+    /* Navigation */
     .hamburger-menu {
         display: block;
     }
@@ -138,6 +169,7 @@ a {
     }
     .nav-menu a {
         color: #ffffff;
+        gap: 60px;
     }
     .nav-item {
         margin: 16px 0;
@@ -147,6 +179,18 @@ a {
     }
     .nav-logo {
         justify-content: center;
+    }
+    .nav-link {
+        transition: 0.3s ease;
+        padding: 10px 10px;
+        border: 0;
+        box-shadow: 0;
+    }
+    .nav-link:hover {
+        transition: 0.3s ease;
+        padding: 10px 10px;
+        border: 0;
+        box-shadow: white 1px 1px;
     }
 
 }
